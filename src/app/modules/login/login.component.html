@@ -1,0 +1,41 @@
+<div class="login_main-container">
+  <div class="login-form_container">
+    <div class="login-title">
+      <img ngSrc="/logos/logotipo.svg" alt="Logotipo de Slyfox" width="31" height="35" />
+      <h1>Bienvenido a <br> Slyfox</h1>
+    </div>
+
+    <form [formGroup]="loginForm" class="login-form" >
+      <slf-ui-input
+      [FormControl]="loginForm.controls['username']"
+      Id="loginUsername"
+      Label="Nombre de usuario"
+      Placeholder="Escribe email..."
+      [Error]="getFieldError('username')"
+      />
+
+      <slf-ui-input
+      [FormControl]="loginForm.controls['password']"
+      Id="loginUsername"
+      Label="Contraseña"
+      [Type]="passwordVisible ? 'text' : 'password'"
+      Placeholder="Ingresa tu contraseña...">
+        @if (!passwordVisible) { <slf-ui-icon iconRight [category]="'general'" [name]="'eye'" (click)="togglePasswordVisibility()"></slf-ui-icon> }
+        @else { <slf-ui-icon iconRight [category]="'general'" [name]="'eye-off'" (click)="togglePasswordVisibility()"></slf-ui-icon> }
+      </slf-ui-input>
+      <a class="login-forgot-password">
+        <p>¿Olvidaste tu Contraseña?</p>
+        <span> Dar Click Aquí</span>
+      </a>
+
+      <slf-ui-button Text="Ingresar" [Style]="{width: '100%'}"/>
+
+       <a  class="login-forgot-password register">
+        <p>¿Quieres Registrarte?</p>
+        <span routerLink="/register">Dar Clic Aquí</span>
+      </a>
+    </form>
+
+  </div>
+  <app-media-card-banner />
+</div>

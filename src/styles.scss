@@ -1,1 +1,34 @@
-/* You can add global styles to this file, and also import other style files */
+@use "tailwindcss";
+
+@theme {
+  --font-satoshi: "Satoshi";
+}
+
+
+* {
+   --sb-track-color: #FFF;
+    --sb-thumb-color: var(--primary-color-200);;
+    --sb-size: 22px;
+
+    &::-webkit-scrollbar {
+    width: var(--sb-size);
+  }
+
+  &::-webkit-scrollbar-track {
+    background: var(--sb-track-color);
+    border-radius: 28px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: var(--sb-thumb-color);
+    border-radius: 9999px;
+    border: 8px solid #FFF;
+  }
+
+  @supports not selector(::-webkit-scrollbar) {
+    & {
+        scrollbar-color: var(--sb-thumb-color)
+                       var(--sb-track-color);
+    }
+  }
+}

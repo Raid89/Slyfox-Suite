@@ -1,0 +1,96 @@
+<div class="register_main-container">
+  <div class="register-form_container">
+    <div class="register-title">
+      <img ngSrc="/logos/logo.svg" alt="Logotipo de Slyfox" width="178" height="64" />
+      <h1>Regístrate</h1>
+    </div>
+
+    <form  class="register-form" (ngSubmit)="handlerSubmit()" [formGroup]="registerForm">
+
+      <div class="register-inputs_container">        <slf-ui-input
+          [FormControl]="registerForm.controls['name']"
+          Id="registerCompanyName"
+          Label="Nombre de la Empresa"
+          Placeholder="Ej: Slyfox Technologies"
+          [Error]="getFieldError('name')"
+        />
+
+        <slf-ui-input
+          [FormControl]="registerForm.controls['nit']"
+          Id="registerCompanyNIT"
+          Label="NIT"
+          Type="number"
+          Placeholder="Ej: 900123456-7"
+          [Error]="getFieldError('nit')"
+        />
+
+        <slf-ui-input
+          [FormControl]="registerForm.controls['address']"
+          Id="registerCompanyAddress"
+          Label="Dirección"
+          Placeholder="Ej: Calle 45 #12-34, Bogotá"
+          [Error]="getFieldError('address')"
+        />
+
+        <slf-ui-input
+          [FormControl]="registerForm.controls['phone']"
+          Id="registerCompanyPhone"
+          Label="Teléfono"
+          Type="number"
+          Placeholder="Ej: 3201234567"
+          [Error]="getFieldError('phone')"
+        />
+
+        <slf-ui-input
+          [FormControl]="registerForm.controls['email']"
+          Id="registerCompanyEmail"
+          Label="Correo Electrónico Corporativo"
+          Placeholder="Ej: contacto@tuempresa.com"
+          [Error]="getFieldError('email')"
+        />
+
+        <slf-ui-input
+          [FormControl]="registerForm.controls['user'].controls['email']"
+          Id="registerPersonalEmail"
+          Label="Correo Electrónico Personal"
+          Placeholder="Ej: juan.perez@gmail.com"
+          [Error]="getFieldError('user.email')"
+        />
+
+        <slf-ui-input
+          [FormControl]="registerForm.controls['user'].controls['username']"
+          Id="registerUsername"
+          Label="Nombre de Usuario"
+          Placeholder="Ej: juanperez123"
+          [Error]="getFieldError('user.username')"
+        />
+
+        <slf-ui-input
+          [FormControl]="registerForm.controls['user'].controls['password']"
+          Id="registerPassword"
+          Label="Contraseña"
+          Type="password"
+          Placeholder="Crea una contraseña segura"
+          [Error]="getFieldError('user.password')"
+        />
+
+        <slf-ui-input
+          [FormControl]="registerForm.controls['user'].controls['confirm_password']"
+          Id="registerConfirmPassword"
+          Label="Confirmar Contraseña"
+          Type="password"
+          Placeholder="Repite tu contraseña"
+          [Error]="getFieldError('user.confirm_password')"
+        />
+
+      </div>
+
+      <div class="register-button_container">
+        <slf-ui-button Text="Registrarme" [Style]="{width: '100%', marginTop: '40px'}"/>
+        <a routerLink="/login">Regresar al Login</a>
+      </div>
+    </form>
+  </div>
+
+  <app-media-card-banner />
+</div>

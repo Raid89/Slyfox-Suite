@@ -1,0 +1,27 @@
+<div class="media_card-main_container">
+  <a class="media_card-back_home">
+    Volver a la pagina web
+    <slf-ui-icon category="arrows" name="arrow-narrow-right" />
+  </a>
+
+  @for (item of mediaContent; track $index) {
+    <div class="media_card-message" [ngClass]="{'selected': item.selected}">
+      {{item.mediaText}}
+    </div>
+  }
+
+  @for (item of mediaContent; track $index) {
+    @for (items of mediaContent; track $index) {
+      <img [ngSrc]="items.mediaImage" priority alt="" width="709" height="871" class="media_card-image" [ngClass]="{'selected': items.selected}"/>
+    }
+  }
+
+
+
+
+  <div class="media_card-dots_container">
+    @for (item of mediaContent; track $index) {
+      <div class="media_card-dot" [ngClass]="{'selected': item.selected}"></div>
+    }
+  </div>
+</div>
