@@ -1,41 +1,47 @@
 <div class="login_main-container">
   <div class="login-form_container">
     <div class="login-title">
-      <img ngSrc="/logos/logotipo.svg" alt="Logotipo de Slyfox" width="31" height="35" />
-      <h1>Bienvenido a <br> Slyfox</h1>
+      <img [ngSrc]="logoUrl" alt="Isotipo de Slyfox" width="31" height="35" />
+      <h1>{{ 'LOGIN.TITLE' | translate }}</h1>
     </div>
 
     <form [formGroup]="loginForm" class="login-form" >
       <slf-ui-input
-      [FormControl]="loginForm.controls['username']"
-      Id="loginUsername"
-      Label="Nombre de usuario"
-      Placeholder="Escribe email..."
-      [Error]="getFieldError('username')"
+        [FormControl]="loginForm.controls['username']"
+        Id="loginUsername"
+        [Label]="'LOGIN.USERNAME.LABEL' | translate"
+        [Placeholder]="'LOGIN.USERNAME.PLACEHOLDER' | translate"
+        [Error]="getFieldError('username')"
       />
 
       <slf-ui-input
-      [FormControl]="loginForm.controls['password']"
-      Id="loginUsername"
-      Label="Contraseña"
-      [Type]="passwordVisible ? 'text' : 'password'"
-      Placeholder="Ingresa tu contraseña...">
-        @if (!passwordVisible) { <slf-ui-icon iconRight [category]="'general'" [name]="'eye'" (click)="togglePasswordVisibility()"></slf-ui-icon> }
-        @else { <slf-ui-icon iconRight [category]="'general'" [name]="'eye-off'" (click)="togglePasswordVisibility()"></slf-ui-icon> }
+        [FormControl]="loginForm.controls['password']"
+        Id="loginPassword"
+        [Label]="'LOGIN.PASSWORD.LABEL' | translate"
+        [Type]="passwordVisible ? 'text' : 'password'"
+        [Placeholder]="'LOGIN.PASSWORD.PLACEHOLDER' | translate">
+        @if (!passwordVisible) {
+          <slf-ui-icon iconRight [category]="'general'" [name]="'eye'" (click)="togglePasswordVisibility()"></slf-ui-icon>
+        } @else {
+          <slf-ui-icon iconRight [category]="'general'" [name]="'eye-off'" (click)="togglePasswordVisibility()"></slf-ui-icon>
+        }
       </slf-ui-input>
+
       <a class="login-forgot-password">
-        <p>¿Olvidaste tu Contraseña?</p>
-        <span> Dar Click Aquí</span>
+        <p>{{ 'LOGIN.FORGOT_PASSWORD.TEXT' | translate }}</p>
+        <span>{{ 'LOGIN.FORGOT_PASSWORD.ACTION' | translate }}</span>
       </a>
 
-      <slf-ui-button Text="Ingresar" [Style]="{width: '100%'}"/>
+      <slf-ui-button [Text]="'LOGIN.BUTTON' | translate" [Style]="{width: '100%'}"/>
 
-       <a  class="login-forgot-password register">
-        <p>¿Quieres Registrarte?</p>
-        <span routerLink="/register">Dar Clic Aquí</span>
+      <a class="login-forgot-password register">
+        <p>{{ 'LOGIN.REGISTER.TEXT' | translate }}</p>
+        <span routerLink="/register">{{ 'LOGIN.REGISTER.ACTION' | translate }}</span>
       </a>
     </form>
 
   </div>
-  <app-media-card-banner />
+  <div class="login-media_card_container">
+    <app-media-card-banner />
+  </div>
 </div>

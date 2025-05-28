@@ -1,0 +1,40 @@
+@use 'dialog' as dialog;
+
+:host {
+  @include dialog.dialog-container;
+
+  .information_dialog-main_container {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    align-items: center;
+    justify-content: center;
+
+    .information_dialog-icon_container {
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      background-color: #A6F4C5;
+      color: #32D583;
+      border: 8px solid #ECFDF3;
+      width: 88px;
+      height: 88px;
+      border-radius: 9999px;
+
+      &.error {
+        color: #F97066;
+        background-color: #ffdfdc;
+        border-color: #FEF3F2;
+      }
+    }
+
+    .information_dialog-text {
+      font-size: 18px;
+      font-style: normal;
+      font-weight: 600;
+      line-height: normal;
+      text-align: center;
+    }
+
+  }
+}

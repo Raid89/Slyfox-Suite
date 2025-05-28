@@ -1,0 +1,148 @@
+{
+  "LOGIN": {
+    "TITLE": "Welcome to Slyfox",
+    "USERNAME": {
+      "LABEL": "Username",
+      "PLACEHOLDER": "Write email...",
+      "ERRORS": {
+        "REQUIRED": "Username is required",
+        "MIN_LENGTH": "Username must be at least 3 characters long",
+        "MAX_LENGTH": "Username must be at most 50 characters long"
+      }
+    },
+    "PASSWORD": {
+      "LABEL": "Password",
+      "PLACEHOLDER": "Enter your password...",
+      "ERRORS": {
+        "REQUIRED": "Password is required",
+        "MAX_LENGTH": "Password must be at most 20 characters long"
+      }
+    },
+    "FORGOT_PASSWORD": {
+      "TEXT": "Forgot your Password?",
+      "ACTION": "Click Here"
+    },    "REGISTER": {
+      "TEXT": "Want to Register?",
+      "ACTION": "Click Here"
+    },
+    "VALIDATE_EMAIL": {
+      "SUCCESS": {
+        "MESSAGE": "Your email has been successfully verified!",
+        "BUTTON_TEXT": "Continue"
+      },
+      "ERROR": {
+        "MESSAGE": "The verification link is invalid or has expired. Please contact support.",
+        "BUTTON_TEXT": "Continue"
+      }
+    },
+    "BUTTON": "Login"
+  },
+  "REGISTER": {
+    "TITLE": "Register",
+    "COMPANY": {
+      "NAME": {
+        "LABEL": "Company Name",
+        "PLACEHOLDER": "Ex: Slyfox Technologies",
+        "ERRORS": {
+          "REQUIRED": "Company name is required",
+          "MIN_LENGTH": "Name must be at least 3 characters long",
+          "MAX_LENGTH": "Name must be at most 50 characters long"
+        }
+      },
+      "NIT": {
+        "LABEL": "NIT",
+        "PLACEHOLDER": "Ex: 900123456-7",
+        "ERRORS": {
+          "REQUIRED": "NIT is required",
+          "MIN_LENGTH": "NIT must be at least 5 characters long",
+          "MAX_LENGTH": "NIT must be at most 15 characters long"
+        }
+      },
+      "ADDRESS": {
+        "LABEL": "Address",
+        "PLACEHOLDER": "Ex: 45th Street #12-34, Bogotá",
+        "ERRORS": {
+          "REQUIRED": "Address is required",
+          "MIN_LENGTH": "Address must be at least 5 characters long",
+          "MAX_LENGTH": "Address must be at most 100 characters long"
+        }
+      },
+      "PHONE": {
+        "LABEL": "Phone",
+        "PLACEHOLDER": "Ex: 3201234567",
+        "ERRORS": {
+          "REQUIRED": "Phone is required",
+          "MIN_LENGTH": "Phone must be at least 7 characters long",
+          "MAX_LENGTH": "Phone must be at most 10 characters long"
+        }
+      },
+      "EMAIL": {
+        "LABEL": "Corporate Email",
+        "PLACEHOLDER": "Ex: contact@yourcompany.com",
+        "ERRORS": {
+          "REQUIRED": "Corporate email is required",
+          "EMAIL": "Corporate email is invalid",
+          "MAX_LENGTH": "Corporate email must be at most 100 characters long"
+        }
+      }
+    },
+    "USER": {
+      "EMAIL": {
+        "LABEL": "Personal Email",
+        "PLACEHOLDER": "Ex: john.doe@gmail.com",
+        "ERRORS": {
+          "REQUIRED": "Personal email is required",
+          "EMAIL": "Personal email is invalid",
+          "MAX_LENGTH": "Personal email must be at most 100 characters long"
+        }
+      },
+      "USERNAME": {
+        "LABEL": "Username",
+        "PLACEHOLDER": "Ex: johndoe123",
+        "ERRORS": {
+          "REQUIRED": "Username is required",
+          "MIN_LENGTH": "Username must be at least 3 characters long",
+          "MAX_LENGTH": "Username must be at most 30 characters long"
+        }
+      },
+      "PASSWORD": {
+        "LABEL": "Password",
+        "PLACEHOLDER": "Create a secure password",
+        "ERRORS": {
+          "REQUIRED": "Password is required",
+          "MIN_LENGTH": "Password must be at least 8 characters long",
+          "MAX_LENGTH": "Password must be at most 20 characters long"
+        }
+      },
+      "CONFIRM_PASSWORD": {
+        "LABEL": "Confirm Password",
+        "PLACEHOLDER": "Repeat your password",
+        "ERRORS": {
+          "REQUIRED": "Password confirmation is required",
+          "MIN_LENGTH": "Confirmation must be at least 8 characters long",
+          "MAX_LENGTH": "Confirmation must be at most 20 characters long",
+          "MATCH": "Passwords do not match"
+        }
+      }
+    },
+    "BUTTONS": {
+      "BACK": "Back to Login",
+      "SUBMIT": "Register"
+    },
+    "DIALOGS": {
+      "GENERAL_ERROR": "An unexpected error occurred. Please try again later.",
+      "COMPANY_CREATED": "Done! We have sent an email to your address {email}."
+    }
+  },
+  "INFORMATION_DIALOG": {
+    "MESSAGE": "Your process has been successfully completed.",
+    "BUTTON_TEXT": "Ok"
+  },
+  "GENERAL": {
+    "ERROR": "Error",
+    "SUCCESS": "Success",
+    "WARNING": "Warning",
+    "INFO": "Information",
+    "LOADING": "Loading..."
+  }
+}

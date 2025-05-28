@@ -5,8 +5,9 @@ import { LoginRoutingModule } from './login-routing.module';
 import { LoginComponent } from './login.component';
 import { SlyfoxUiButtonComponent, SlyfoxUiIconComponent, SlyfoxUiInputComponent } from 'slyfox-ui';
 import { ReactiveFormsModule } from '@angular/forms';
-import { MediaCardBannerComponent } from '../../standalone/media-card-banner/media-card-banner.component';
+import { MediaCardBannerComponent } from '@standalone/media-card-banner/media-card-banner.component';
 import { RouterModule } from '@angular/router';
+import { TranslateModule } from '@ngx-translate/core';
 
 
 @NgModule({
@@ -22,7 +23,8 @@ import { RouterModule } from '@angular/router';
     SlyfoxUiIconComponent,
     MediaCardBannerComponent,
     NgOptimizedImage,
-    RouterModule
+    RouterModule,
+    TranslateModule
   ]
 })
 export class LoginModule { }

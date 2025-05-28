@@ -1,96 +1,97 @@
 <div class="register_main-container">
   <div class="register-form_container">
     <div class="register-title">
-      <img ngSrc="/logos/logo.svg" alt="Logotipo de Slyfox" width="178" height="64" />
-      <h1>Regístrate</h1>
+      <img [ngSrc]="logoUrl" alt="Logotipo de Slyfox" width="178" height="64" />
+      <h1>{{ 'REGISTER.TITLE' | translate }}</h1>
     </div>
 
-    <form  class="register-form" (ngSubmit)="handlerSubmit()" [formGroup]="registerForm">
-
-      <div class="register-inputs_container">        <slf-ui-input
-          [FormControl]="registerForm.controls['name']"
+    <form class="register-form" [formGroup]="registerForm" (ngSubmit)="$event.preventDefault()">
+      <div class="register-inputs_container">
+        <slf-ui-input
+          [FormControl]="registerForm.controls['company'].controls['name']"
           Id="registerCompanyName"
-          Label="Nombre de la Empresa"
-          Placeholder="Ej: Slyfox Technologies"
-          [Error]="getFieldError('name')"
+          [Label]="'REGISTER.COMPANY.NAME.LABEL' | translate"
+          [Placeholder]="'REGISTER.COMPANY.NAME.PLACEHOLDER' | translate"
+          [Error]="getFieldError('company.name')"
         />
 
         <slf-ui-input
-          [FormControl]="registerForm.controls['nit']"
+          [FormControl]="registerForm.controls['company'].controls['nit']"
           Id="registerCompanyNIT"
-          Label="NIT"
+          [Label]="'REGISTER.COMPANY.NIT.LABEL' | translate"
           Type="number"
-          Placeholder="Ej: 900123456-7"
-          [Error]="getFieldError('nit')"
+          [Placeholder]="'REGISTER.COMPANY.NIT.PLACEHOLDER' | translate"
+          [Error]="getFieldError('company.nit')"
         />
 
         <slf-ui-input
-          [FormControl]="registerForm.controls['address']"
+          [FormControl]="registerForm.controls['company'].controls['address']"
           Id="registerCompanyAddress"
-          Label="Dirección"
-          Placeholder="Ej: Calle 45 #12-34, Bogotá"
-          [Error]="getFieldError('address')"
+          [Label]="'REGISTER.COMPANY.ADDRESS.LABEL' | translate"
+          [Placeholder]="'REGISTER.COMPANY.ADDRESS.PLACEHOLDER' | translate"
+          [Error]="getFieldError('company.address')"
         />
 
         <slf-ui-input
-          [FormControl]="registerForm.controls['phone']"
+          [FormControl]="registerForm.controls['company'].controls['phone']"
           Id="registerCompanyPhone"
-          Label="Teléfono"
+          [Label]="'REGISTER.COMPANY.PHONE.LABEL' | translate"
           Type="number"
-          Placeholder="Ej: 3201234567"
-          [Error]="getFieldError('phone')"
+          [Placeholder]="'REGISTER.COMPANY.PHONE.PLACEHOLDER' | translate"
+          [Error]="getFieldError('company.phone')"
         />
 
         <slf-ui-input
-          [FormControl]="registerForm.controls['email']"
+          [FormControl]="registerForm.controls['company'].controls['email']"
           Id="registerCompanyEmail"
-          Label="Correo Electrónico Corporativo"
-          Placeholder="Ej: contacto@tuempresa.com"
-          [Error]="getFieldError('email')"
+          [Label]="'REGISTER.COMPANY.EMAIL.LABEL' | translate"
+          [Placeholder]="'REGISTER.COMPANY.EMAIL.PLACEHOLDER' | translate"
+          [Error]="getFieldError('company.email')"
         />
 
         <slf-ui-input
           [FormControl]="registerForm.controls['user'].controls['email']"
           Id="registerPersonalEmail"
-          Label="Correo Electrónico Personal"
-          Placeholder="Ej: juan.perez@gmail.com"
+          [Label]="'REGISTER.USER.EMAIL.LABEL' | translate"
+          [Placeholder]="'REGISTER.USER.EMAIL.PLACEHOLDER' | translate"
           [Error]="getFieldError('user.email')"
         />
 
         <slf-ui-input
           [FormControl]="registerForm.controls['user'].controls['username']"
           Id="registerUsername"
-          Label="Nombre de Usuario"
-          Placeholder="Ej: juanperez123"
+          [Label]="'REGISTER.USER.USERNAME.LABEL' | translate"
+          [Placeholder]="'REGISTER.USER.USERNAME.PLACEHOLDER' | translate"
           [Error]="getFieldError('user.username')"
         />
 
         <slf-ui-input
           [FormControl]="registerForm.controls['user'].controls['password']"
           Id="registerPassword"
-          Label="Contraseña"
+          [Label]="'REGISTER.USER.PASSWORD.LABEL' | translate"
           Type="password"
-          Placeholder="Crea una contraseña segura"
+          [Placeholder]="'REGISTER.USER.PASSWORD.PLACEHOLDER' | translate"
           [Error]="getFieldError('user.password')"
         />
 
         <slf-ui-input
           [FormControl]="registerForm.controls['user'].controls['confirm_password']"
           Id="registerConfirmPassword"
-          Label="Confirmar Contraseña"
+          [Label]="'REGISTER.USER.CONFIRM_PASSWORD.LABEL' | translate"
           Type="password"
-          Placeholder="Repite tu contraseña"
+          [Placeholder]="'REGISTER.USER.CONFIRM_PASSWORD.PLACEHOLDER' | translate"
           [Error]="getFieldError('user.confirm_password')"
         />
-
       </div>
 
       <div class="register-button_container">
-        <slf-ui-button Text="Registrarme" [Style]="{width: '100%', marginTop: '40px'}"/>
-        <a routerLink="/login">Regresar al Login</a>
+        <slf-ui-button tabindex="-1" Type="button" (click)="redirectToLogin(); $event.preventDefault()" [Text]="'REGISTER.BUTTONS.BACK' | translate" Color="secondary" [Style]="{width: '100%', marginTop: '40px'}"/>
+        <slf-ui-button (Click)="handlerSubmit()" Type="submit" [IsLoading]="isLoading()" [Text]="'REGISTER.BUTTONS.SUBMIT' | translate" [Style]="{width: '100%', marginTop: '40px'}"/>
       </div>
     </form>
   </div>
 
-  <app-media-card-banner />
+  <div class="login-media_card_container">
+    <app-media-card-banner />
+  </div>
 </div>

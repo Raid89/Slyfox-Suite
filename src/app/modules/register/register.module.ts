@@ -3,11 +3,10 @@ import { CommonModule, NgOptimizedImage } from '@angular/common';
 
 import { RegisterRoutingModule } from './register-routing.module';
 import { RegisterComponent } from './register.component';
-import { MediaCardBannerComponent } from '../../standalone/media-card-banner/media-card-banner.component';
+import { MediaCardBannerComponent } from '@standalone/media-card-banner/media-card-banner.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { SlyfoxUiButtonComponent, SlyfoxUiIconComponent, SlyfoxUiInputComponent } from 'slyfox-ui';
-import { RouterModule } from '@angular/router';
-
+import { TranslateModule } from '@ngx-translate/core';
 
 @NgModule({
   declarations: [
@@ -18,11 +17,11 @@ import { RouterModule } from '@angular/router';
     RegisterRoutingModule,
     MediaCardBannerComponent,
     ReactiveFormsModule,
-    RouterModule,
     NgOptimizedImage,
     SlyfoxUiButtonComponent,
     SlyfoxUiIconComponent,
-    SlyfoxUiInputComponent
+    SlyfoxUiInputComponent,
+    TranslateModule
   ]
 })
 export class RegisterModule { }

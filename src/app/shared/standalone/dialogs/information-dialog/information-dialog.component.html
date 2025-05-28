@@ -1,0 +1,7 @@
+<div class="information_dialog-main_container">
+  <div class="information_dialog-icon_container error" [ngClass]="{'error': data?.type === 'error'}">
+    <slf-ui-icon [category]="data?.iconCategory || 'general'" [name]="data?.iconName || 'check'" [size]="55" [weight]="2" />
+  </div>
+  <p class="information_dialog-text" [translate]="data?.message || 'INFORMATION_DIALOG.MESSAGE'"></p>
+  <slf-ui-button [Text]="data?.buttonText || 'INFORMATION_DIALOG.BUTTON_TEXT' | translate" (click)="dialogRef.close()"></slf-ui-button>
+</div>

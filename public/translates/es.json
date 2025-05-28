@@ -1,0 +1,149 @@
+{
+  "LOGIN": {
+    "TITLE": "Bienvenido a Slyfox",
+    "USERNAME": {
+      "LABEL": "Nombre de usuario",
+      "PLACEHOLDER": "Escribe email...",
+      "ERRORS": {
+        "REQUIRED": "El nombre de usuario es requerido",
+        "MIN_LENGTH": "El nombre de usuario debe tener al menos 3 caracteres",
+        "MAX_LENGTH": "El nombre de usuario debe tener como máximo 50 caracteres"
+      }
+    },
+    "PASSWORD": {
+      "LABEL": "Contraseña",
+      "PLACEHOLDER": "Ingresa tu contraseña...",
+      "ERRORS": {
+        "REQUIRED": "La contraseña es requerida",
+        "MAX_LENGTH": "La contraseña debe tener como máximo 20 caracteres"
+      }
+    },
+    "FORGOT_PASSWORD": {
+      "TEXT": "¿Olvidaste tu Contraseña?",
+      "ACTION": "Dar Click Aquí"
+    },
+    "REGISTER": {
+      "TEXT": "¿Quieres Registrarte?",
+      "ACTION": "Dar Clic Aquí"
+    },
+    "VALIDATE_EMAIL": {
+      "SUCCESS": {
+        "MESSAGE": "¡Tu correo electrónico ha sido verificado exitosamente!",
+        "BUTTON_TEXT": "Continuar"
+      },
+      "ERROR": {
+        "MESSAGE": "El enlace de verificación es inválido o ha expirado. Por favor, comunícate con soporte.",
+        "BUTTON_TEXT": "Continuar"
+      }
+    },
+    "BUTTON": "Ingresar"
+  },
+  "REGISTER": {
+    "TITLE": "Regístrate",
+    "COMPANY": {
+      "NAME": {
+        "LABEL": "Nombre de la Empresa",
+        "PLACEHOLDER": "Ej: Slyfox Technologies",
+        "ERRORS": {
+          "REQUIRED": "El nombre de la empresa es requerido",
+          "MIN_LENGTH": "El nombre debe tener al menos 3 caracteres",
+          "MAX_LENGTH": "El nombre debe tener como máximo 50 caracteres"
+        }
+      },
+      "NIT": {
+        "LABEL": "NIT",
+        "PLACEHOLDER": "Ej: 900123456-7",
+        "ERRORS": {
+          "REQUIRED": "El NIT es requerido",
+          "MIN_LENGTH": "El NIT debe tener al menos 5 caracteres",
+          "MAX_LENGTH": "El NIT debe tener como máximo 15 caracteres"
+        }
+      },
+      "ADDRESS": {
+        "LABEL": "Dirección",
+        "PLACEHOLDER": "Ej: Calle 45 #12-34, Bogotá",
+        "ERRORS": {
+          "REQUIRED": "La dirección es requerida",
+          "MIN_LENGTH": "La dirección debe tener al menos 5 caracteres",
+          "MAX_LENGTH": "La dirección debe tener como máximo 100 caracteres"
+        }
+      },
+      "PHONE": {
+        "LABEL": "Teléfono",
+        "PLACEHOLDER": "Ej: 3201234567",
+        "ERRORS": {
+          "REQUIRED": "El teléfono es requerido",
+          "MIN_LENGTH": "El teléfono debe tener al menos 7 caracteres",
+          "MAX_LENGTH": "El teléfono debe tener como máximo 10 caracteres"
+        }
+      },
+      "EMAIL": {
+        "LABEL": "Correo Electrónico Corporativo",
+        "PLACEHOLDER": "Ej: contacto@tuempresa.com",
+        "ERRORS": {
+          "REQUIRED": "El correo corporativo es requerido",
+          "EMAIL": "El correo corporativo no es válido",
+          "MAX_LENGTH": "El correo corporativo debe tener como máximo 100 caracteres"
+        }
+      }
+    },
+    "USER": {
+      "EMAIL": {
+        "LABEL": "Correo Electrónico Personal",
+        "PLACEHOLDER": "Ej: juan.perez@gmail.com",
+        "ERRORS": {
+          "REQUIRED": "El correo personal es requerido",
+          "EMAIL": "El correo personal no es válido",
+          "MAX_LENGTH": "El correo personal debe tener como máximo 100 caracteres"
+        }
+      },
+      "USERNAME": {
+        "LABEL": "Nombre de Usuario",
+        "PLACEHOLDER": "Ej: juanperez123",
+        "ERRORS": {
+          "REQUIRED": "El nombre de usuario es requerido",
+          "MIN_LENGTH": "El nombre de usuario debe tener al menos 3 caracteres",
+          "MAX_LENGTH": "El nombre de usuario debe tener como máximo 30 caracteres"
+        }
+      },
+      "PASSWORD": {
+        "LABEL": "Contraseña",
+        "PLACEHOLDER": "Crea una contraseña segura",
+        "ERRORS": {
+          "REQUIRED": "La contraseña es requerida",
+          "MIN_LENGTH": "La contraseña debe tener al menos 8 caracteres",
+          "MAX_LENGTH": "La contraseña debe tener como máximo 20 caracteres"
+        }
+      },
+      "CONFIRM_PASSWORD": {
+        "LABEL": "Confirmar Contraseña",
+        "PLACEHOLDER": "Repite tu contraseña",
+        "ERRORS": {
+          "REQUIRED": "La confirmación de contraseña es requerida",
+          "MIN_LENGTH": "La confirmación debe tener al menos 8 caracteres",
+          "MAX_LENGTH": "La confirmación debe tener como máximo 20 caracteres",
+          "MATCH": "Las contraseñas no coinciden"
+        }
+      }
+    },
+    "BUTTONS": {
+      "BACK": "Regresar al Login",
+      "SUBMIT": "Registrarme"
+    },
+    "DIALOGS": {
+      "GENERAL_ERROR": "Ha ocurrido un error inesperado. Por favor, inténtalo de nuevo más tarde.",
+      "COMPANY_CREATED": "¡Listo! Hemos enviado un correo electrónico a su dirección {{ email }}!"
+    }
+  },
+  "INFORMATION_DIALOG": {
+    "MESSAGE": "Tú proceso ha sido exitoso.",
+    "BUTTON_TEXT": "Continuar"
+  },
+  "GENERAL": {
+    "ERROR": "Error",
+    "SUCCESS": "Éxito",
+    "WARNING": "Advertencia",
+    "INFO": "Información",
+    "LOADING": "Cargando..."
+  }
+}

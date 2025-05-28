@@ -83,3 +83,32 @@ slf-ui-button {
     }
   }
 }
+
+@media (max-width: 1000px) {
+  .login_main-container {
+    grid-template-columns: 1fr;
+    padding: 58px 24px;
+
+    .login-form_container {
+      .login-form {
+        max-width: 100%;
+      }
+    }
+  }
+
+  .login-media_card_container {
+    display: none;
+  }
+}
+
+
+@media (max-width: 500px) {
+  .login_main-container {
+    grid-template-columns: 100%;
+    padding: 58px 24px;
+  }
+
+  .login-media_card_container {
+    display: none;
+  }
+}
