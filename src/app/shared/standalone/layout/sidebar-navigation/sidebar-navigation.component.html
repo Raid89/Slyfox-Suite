@@ -1,0 +1,36 @@
+<div class="main-sidebar">
+  <div class="user-information">
+    <slf-ui-avatar Text="NC" Size="sm" />
+    <div class="user-information_details">
+      <span class="user-information_name">Karem Camargo</span>
+      <br>
+      <span class="user-information_email">Karem&#64;Vanadium.com</span>
+    </div>
+  </div>
+
+  <div class="sidevar-navigation">
+    @for (item of sidebarOptions; track $index) {
+      <a [routerLink]="[item.route]" [class.selected]="item.selected" routerLinkActive="router-link-active">
+        <slf-ui-icon
+          [category]="item.iconCategory"
+          [name]="item.iconName"
+          [size]="20"
+          [weight]="1.5"/>
+        <span>{{ item.label | translate }}</span>
+      </a>
+    }
+  </div>
+
+  <hr class="mt-2 border-t border-gray-300 w-full" />
+
+  <div class="sidebar-log-out">
+    <a routerLink="/login">
+      <slf-ui-icon category="general" name="log-out-03" [size]="20" [weight]="1.5"/>
+      <span>{{ 'SIDEBAR.LOGOUT' | translate }}</span>
+    </a>
+  </div>
+
+  <div class="logo-container">
+    <img src="images/logo-vanadium.webp" alt="">
+  </div>
+</div>

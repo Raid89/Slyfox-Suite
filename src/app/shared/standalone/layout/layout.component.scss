@@ -1,0 +1,11 @@
+
+.layout-main-container {
+  padding: 15px;
+  display: grid;
+  grid-template-columns: 240px 1fr;
+
+  .layout-body {
+    padding: 25px 30px;
+  }
+}
+

@@ -1,0 +1,11 @@
+{
+  "SidebarOptions": [
+    {
+      "label": "SIDEBAR.ADMINISTRATION",
+      "iconCategory": "layout",
+      "iconName": "layout-alt-04",
+      "route": "/administration",
+      "selected": true
+    }
+  ]
+}

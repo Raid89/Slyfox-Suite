@@ -1,0 +1,16 @@
+<div class="users-main_container">
+  <div class="users-header">
+    <slf-ui-button Text="Agregar Nuevo" IconType="left" IconCategory="general" IconName="plus-circle"></slf-ui-button>
+    <div class="users-header_search">
+      <slf-ui-input [FormControl]="searchControl" iconPosition="left" Placeholder="Buscar.....">
+         <slf-ui-icon iconLeft [category]="'general'" [name]="'search-refraction'"></slf-ui-icon>
+      </slf-ui-input>
+    </div>
+  </div>
+
+  <div class="users-table_container">
+    <app-users-table>
+    </app-users-table>
+
+  </div>
+</div>

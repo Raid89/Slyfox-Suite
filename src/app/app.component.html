@@ -1,7 +1,6 @@
-<div class="language-selector">
-  <button [class.active]="currentLang === 'es'" (click)="changeLang('es')">ES</button>
-  <button [class.active]="currentLang === 'en'" (click)="changeLang('en')">EN</button>
-</div>
+
+<app-language-button />
+
 <main [@fadeAnimation]="prepareRoute(outlet)">
   <router-outlet #outlet="outlet"></router-outlet>
 </main>

@@ -1,0 +1,13 @@
+<div class="config_navigation-main_containter">
+  @for (navigationItem of currentNavigation(); track $index) {
+  <div class="config_navigation-tab">
+    <span class="config_navigation-tab_title">{{ navigationItem.title | translate }}</span>
+    @for (children of navigationItem.childrens; track $index) {
+      <a [class.selected]="children.selected" [routerLink]="children.path" class="config_navigation-tab_navigation">
+        <slf-ui-icon [category]="children.iconCategory" [name]="children.iconName" [weight]="1.5" [size]="18"/>
+        {{ children.label | translate }}
+      </a>
+    }
+    </div>
+  }
+</div>

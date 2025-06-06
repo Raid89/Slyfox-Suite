@@ -1,0 +1,17 @@
+{
+  "Configuration": [
+    {
+      "path": "users",
+      "breadcrumbs": [
+        {
+          "label": "BREADCRUMBS.HOME",
+          "path": ""
+        },
+        {
+          "label": "BREADCRUMBS.ADMINISTRATION",
+          "path": "users"
+        }
+      ]
+    }
+  ]
+}

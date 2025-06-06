@@ -144,5 +144,19 @@
     "WARNING": "Warning",
     "INFO": "Information",
     "LOADING": "Loading..."
+  },
+  "SIDEBAR": {
+    "ADMINISTRATION": "Administration",
+    "LOGOUT": "Logout"
+  },
+  "ADMINISTRATION": {
+    "TITLE": "Administration",
+    "NAVIGATION": {
+      "USERS": "Users"
+    }
+  },
+  "BREADCRUMBS": {
+    "HOME": "Home",
+    "ADMINISTRATION": "Administration"
   }
 }

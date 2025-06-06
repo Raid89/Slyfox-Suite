@@ -1,0 +1,34 @@
+.config_navigation-main_containter {
+  display: flex;
+  flex-direction: column;
+  width: 194px;
+
+  .config_navigation-tab {
+    display: flex;
+    flex-direction: column;
+
+    .config_navigation-tab_title {
+      padding: 6px 0px;
+      color: var(--primary-color-200);
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    .config_navigation-tab_navigation {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      border-radius: 8px;
+      padding: 6px 10px;
+      font-size: 14px;
+      font-weight: 500;
+      line-height: 24px;
+      cursor: pointer;
+      transition: background-color .3s;
+
+      &.selected {
+        background-color: #EEF0F2;
+      }
+    }
+  }
+}

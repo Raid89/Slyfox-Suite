@@ -1,0 +1,16 @@
+{
+  "Configuration": [
+    {
+      "title": "ADMINISTRATION.NAVIGATION.USERS.TITLE",
+      "childrens": [
+        {
+          "label": "ADMINISTRATION.NAVIGATION.USERS.CHILDREN.LIST",
+          "iconCategory": "finance",
+          "iconName": "bank-note-01",
+          "path": "/administration/users",
+          "selected": true
+        }
+      ]
+    }
+  ]
+}

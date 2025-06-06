@@ -1,0 +1,21 @@
+.breadcrumb-main_container {
+  display: inline-flex;
+  align-items: center;
+  gap: 4.3px;
+  font-family: Satoshi;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  color: var(--border-color-200);
+
+  .breadcrump-item {
+    display: flex;
+    align-items: center;
+    transition: color .3s;
+    cursor: pointer;
+  }
+  .breadcrump-selected {
+    color: var(--primary-color-200);
+  }
+}

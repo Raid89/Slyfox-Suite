@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { LayoutComponent } from '@standalone/layout/layout.component';
 
 const routes: Routes = [
   {
@@ -17,6 +18,16 @@ const routes: Routes = [
     loadChildren: () => import('./modules/register/register.module').then(m => m.RegisterModule),
     data: { animation: 'RegisterPage' }
   },
+  {
+    path: '',
+    component: LayoutComponent,
+    children: [
+      {
+        path: 'administration',
+        loadChildren: () => import('./modules/administration/administration.module').then(m => m.AdministrationModule)
+      }
+    ]
+  }
 ];
 
 @NgModule({

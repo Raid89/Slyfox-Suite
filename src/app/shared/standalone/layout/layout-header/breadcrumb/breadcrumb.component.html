@@ -1,0 +1,15 @@
+<div class="breadcrumb-main_container">
+
+  @for (item of breadcrumbList(); track $index) {
+    <a
+        [ngClass]="{'breadcrump-selected': item.selected}"
+        class="breadcrump-item"
+        [routerLink]="['/']"
+        routerLinkActive="router-link-active" >
+      <span>{{ item.label | translate }}</span>
+      <slf-ui-icon category="arrows" name="chevron-right" [weight]="1.5" [size]="16" />
+    </a>
+  }
+
+
+</div>
