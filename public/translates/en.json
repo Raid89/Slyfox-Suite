@@ -31,6 +31,7 @@
         "BUTTON_TEXT": "Continue"
       },
       "ERROR": {
+        "AUTHENTICATION": "The credentials provided are invalid.",
         "MESSAGE": "The verification link is invalid or has expired. Please contact support.",
         "BUTTON_TEXT": "Continue"
       }
@@ -143,7 +144,8 @@
     "SUCCESS": "Success",
     "WARNING": "Warning",
     "INFO": "Information",
-    "LOADING": "Loading..."
+    "LOADING": "Loading...",
+    "CLOSE": "Close"
   },
   "SIDEBAR": {
     "ADMINISTRATION": "Administration",

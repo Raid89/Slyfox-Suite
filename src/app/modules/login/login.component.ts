@@ -104,8 +104,8 @@ export class LoginComponent implements OnInit {
       error: (error) => {
         this.dialog.open(InformationDialogComponent, {
           data: {
-            message: this.translate.instant('LOGIN.ERRORS.AUTHENTICATION'),
-            buttonText: this.translate.instant('GENERAL.BUTTONS.CLOSE'),
+            message: this.translate.instant('LOGIN.ERROR.AUTHENTICATION'),
+            buttonText: this.translate.instant('GENERAL.CLOSE'),
             type: 'error',
             iconName: 'x-circle',
             iconCategory: 'general',

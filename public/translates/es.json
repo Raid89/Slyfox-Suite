@@ -36,6 +36,11 @@
         "BUTTON_TEXT": "Continuar"
       }
     },
+    "ERROR": {
+      "AUTHENTICATION": "Las credenciales proporcionadas son inválidas.",
+      "MESSAGE": "El enlace de verificación es inválido o ha expirado. Por favor, comunícate con soporte.",
+      "BUTTON_TEXT": "Continuar"
+    },
     "BUTTON": "Ingresar"
   },
   "REGISTER": {
@@ -144,7 +149,8 @@
     "SUCCESS": "Éxito",
     "WARNING": "Advertencia",
     "INFO": "Información",
-    "LOADING": "Cargando..."
+    "LOADING": "Cargando...",
+    "CLOSE": "Cerrar"
   },
   "SIDEBAR": {
     "ADMINISTRATION": "Administración",
