@@ -5,6 +5,7 @@ import { AssetsService } from '@services/assets.service';
 import { Dialog } from '@angular/cdk/dialog';
 import { ActivatedRoute, Router } from '@angular/router';
 import { InformationDialogComponent } from '@standalone/dialogs/information-dialog/information-dialog.component';
+import { AuthService } from '@services/auth.service';
 @Component({
   selector: 'app-login',
   standalone: false,
@@ -18,6 +19,7 @@ export class LoginComponent implements OnInit {
   private translate = inject(TranslateService);
   private assetsService = inject(AssetsService);
   private dialog = inject(Dialog);
+  private authService = inject(AuthService);
 
   protected readonly logoUrl = this.assetsService.getLogo('isotipo-slyfox');
 
@@ -85,5 +87,31 @@ export class LoginComponent implements OnInit {
 
   protected togglePasswordVisibility() {
     this.passwordVisible = !this.passwordVisible;
+  }
+
+  protected login() {
+    if (this.loginForm.invalid) {
+      this.loginForm.markAllAsTouched();
+      return;
+    }
+
+    const { username, password } = this.loginForm.value;
+
+    this.authService.authenticateUser(username!, password!).subscribe({
+      next: () => {
+        this.router.navigate(['/']);
+      },
+      error: (error) => {
+        this.dialog.open(InformationDialogComponent, {
+          data: {
+            message: this.translate.instant('LOGIN.ERRORS.AUTHENTICATION'),
+            buttonText: this.translate.instant('GENERAL.BUTTONS.CLOSE'),
+            type: 'error',
+            iconName: 'x-circle',
+            iconCategory: 'general',
+          }
+        });
+      }
+    });
   }
 }
