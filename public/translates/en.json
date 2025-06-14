@@ -88,6 +88,15 @@
       }
     },
     "USER": {
+      "IDENTITY_NUMBER": {
+        "LABEL": "Identity Number",
+        "PLACEHOLDER": "Ex: 1234567890",
+        "ERRORS": {
+          "REQUIRED": "Identity number is required",
+          "MIN_LENGTH": "Identity number must be at least 5 characters long",
+          "MAX_LENGTH": "Identity number must be at most 20 characters long"
+        }
+      },
       "EMAIL": {
         "LABEL": "Personal Email",
         "PLACEHOLDER": "Ex: john.doe@gmail.com",

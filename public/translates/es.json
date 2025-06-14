@@ -93,6 +93,15 @@
       }
     },
     "USER": {
+      "IDENTITY_NUMBER": {
+        "LABEL": "Número de Identidad",
+        "PLACEHOLDER": "Ej: 1234567890",
+        "ERRORS": {
+          "REQUIRED": "El número de identidad es requerido",
+          "MIN_LENGTH": "El número de identidad debe tener al menos 5 caracteres",
+          "MAX_LENGTH": "El número de identidad debe tener como máximo 15 caracteres"
+        }
+      },
       "EMAIL": {
         "LABEL": "Correo Electrónico Personal",
         "PLACEHOLDER": "Ej: juan.perez@gmail.com",

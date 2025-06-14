@@ -24,7 +24,7 @@
   <hr class="mt-2 border-t border-gray-300 w-full" />
 
   <div class="sidebar-log-out">
-    <a routerLink="/login">
+    <a (click)="logout()">
       <slf-ui-icon category="general" name="log-out-03" [size]="20" [weight]="1.5"/>
       <span>{{ 'SIDEBAR.LOGOUT' | translate }}</span>
     </a>

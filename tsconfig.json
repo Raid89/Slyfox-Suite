@@ -23,6 +23,7 @@
       "@standalone/*": ["./src/app/shared/standalone/*"],
       "@validators/*": ["./src/app/shared/validators/*"],
       "@environments/*": ["./src/environments/*"],
+      "@guards/*": ["./src/app/shared/guards/*"],
     }
   },
   "angularCompilerOptions": {

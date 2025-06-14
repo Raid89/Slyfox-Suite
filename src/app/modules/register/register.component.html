@@ -50,6 +50,14 @@
         />
 
         <slf-ui-input
+          [FormControl]="registerForm.controls['user'].controls['identity_number']"
+          Id="registerIdentityNumber"
+          [Label]="'REGISTER.USER.IDENTITY_NUMBER.LABEL' | translate"
+          [Placeholder]="'REGISTER.USER.IDENTITY_NUMBER.PLACEHOLDER' | translate"
+          [Error]="getFieldError('user.identity_number')"
+        />
+
+        <slf-ui-input
           [FormControl]="registerForm.controls['user'].controls['email']"
           Id="registerPersonalEmail"
           [Label]="'REGISTER.USER.EMAIL.LABEL' | translate"

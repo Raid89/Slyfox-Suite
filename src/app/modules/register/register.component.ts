@@ -82,6 +82,14 @@ export class RegisterComponent {
           Validators.minLength(3),
           Validators.maxLength(30)
         ]],
+        identity_number : ['', [
+          Validators.required,
+          Validators.minLength(5),
+        ]],
+        position : ['owner', [
+          Validators.required,
+          Validators.minLength(3),
+        ]]
       }, {
         validators: [matchPasswordValidator('password', 'confirm_password')]
       })

@@ -1,4 +1,4 @@
-import { Component, inject, OnInit } from '@angular/core';
+import { Component, inject, OnInit, signal } from '@angular/core';
 import { FormBuilder, FormControl, Validators } from '@angular/forms';
 import { TranslateService } from '@ngx-translate/core';
 import { AssetsService } from '@services/assets.service';
@@ -6,6 +6,7 @@ import { Dialog } from '@angular/cdk/dialog';
 import { ActivatedRoute, Router } from '@angular/router';
 import { InformationDialogComponent } from '@standalone/dialogs/information-dialog/information-dialog.component';
 import { AuthService } from '@services/auth.service';
+import { Observer } from 'rxjs';
 @Component({
   selector: 'app-login',
   standalone: false,
@@ -22,6 +23,7 @@ export class LoginComponent implements OnInit {
   private authService = inject(AuthService);
 
   protected readonly logoUrl = this.assetsService.getLogo('isotipo-slyfox');
+  protected loginIsLoading = signal(false);
 
   protected loginForm = this.formBuilder.group({
     username: new FormControl('', [Validators.required, Validators.minLength(3), Validators.maxLength(50)]),
@@ -31,10 +33,20 @@ export class LoginComponent implements OnInit {
   protected passwordVisible = false;
 
   ngOnInit(): void {
-    const statusValidation = JSON.parse(this.activatedRouter.snapshot.queryParamMap.get('statusValidation') || '{}');
-    if (statusValidation.success !== undefined) {
+    this.validateVerificationEmail()
+  }
+
+  validateVerificationEmail() {
+    const queryParam = this.activatedRouter.snapshot.queryParamMap.get('statusValidation');
+    if (!queryParam) return;
+
+    try {
+      const statusValidation = JSON.parse(queryParam || '{}');
       this.showValidationEmailDialog(statusValidation.success);
       this.deleteQueryParams();
+    } catch (error) {
+      this.showValidationEmailDialog(false);
+      console.error('Error parsing statusValidation:', error);
     }
   }
 
@@ -54,7 +66,7 @@ export class LoginComponent implements OnInit {
   }
 
   showValidationEmailDialog(success: boolean) {
-    if(success) {
+    if (success) {
       this.dialog.open(InformationDialogComponent, {
         data: {
           message: this.translate.instant('LOGIN.VALIDATE_EMAIL.SUCCESS.MESSAGE'),
@@ -97,20 +109,37 @@ export class LoginComponent implements OnInit {
 
     const { username, password } = this.loginForm.value;
 
-    this.authService.authenticateUser(username!, password!).subscribe({
-      next: () => {
-        this.router.navigate(['/']);
+    this.loginIsLoading.set(true);
+    this.authService.authenticateUser(username!, password!).subscribe(this.loginObserver());
+  }
+
+  private loginObserver(): Observer<boolean> {
+    return {
+      next: (response) => {
+        if (response) {
+          this.router.navigate(['/administration']);
+        } else {
+          this.openErrorLoginDialog();
+        }
       },
       error: (error) => {
-        this.dialog.open(InformationDialogComponent, {
-          data: {
-            message: this.translate.instant('LOGIN.ERROR.AUTHENTICATION'),
-            buttonText: this.translate.instant('GENERAL.CLOSE'),
-            type: 'error',
-            iconName: 'x-circle',
-            iconCategory: 'general',
-          }
-        });
+        this.openErrorLoginDialog();
+        this.loginIsLoading.set(false);
+      },
+      complete: () => {
+        this.loginIsLoading.set(false);
+      }
+    };
+  }
+
+  private openErrorLoginDialog() {
+    this.dialog.open(InformationDialogComponent, {
+      data: {
+        message: this.translate.instant('LOGIN.ERROR.AUTHENTICATION'),
+        buttonText: this.translate.instant('GENERAL.CLOSE'),
+        type: 'error',
+        iconName: 'x-circle',
+        iconCategory: 'general',
       }
     });
   }

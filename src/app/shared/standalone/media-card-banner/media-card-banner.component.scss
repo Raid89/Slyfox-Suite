@@ -19,6 +19,9 @@
     position: absolute;
     right: 40px;
     top: 37px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
   }
 
   .media_card-message {

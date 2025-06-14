@@ -10,17 +10,16 @@
     </tr>
   </thead>
   <tbody>
-    <tr>
+    <tr *ngFor="let user of paginatedUsers; trackBy: trackByUser">
       <td>
         <div class="table-avatar">
-          <slf-ui-avatar Text="NC" Size="xs" BackgroundColor="primary"></slf-ui-avatar>
+          <slf-ui-avatar [Text]="user.avatarText" Size="xs" [BackgroundColor]="user.avatarColor"></slf-ui-avatar>
         </div>
-
       </td>
-      <td>Juan Perez</td>
-      <td>juan.perezexample.com</td>
-      <td>123456789</td>
-      <td>Desarrollador</td>
+      <td>{{ user.name }}</td>
+      <td>{{ user.email }}</td>
+      <td>{{ user.identityNumber }}</td>
+      <td>{{ user.role }}</td>
       <td>
         <div class="table-actions">
           <a><slf-ui-icon category="layout" name="layout-alt-03" [weight]="1.5"/></a>
@@ -29,139 +28,37 @@
         </div>
       </td>
     </tr>
-    <tr>
-      <td>
-        <div class="table-avatar">
-          <slf-ui-avatar Text="NC" Size="xs" BackgroundColor="primary"></slf-ui-avatar>
-        </div>
-
-      </td>
-      <td>Juan Perez</td>
-      <td>juan.perezexample.com</td>
-      <td>123456789</td>
-      <td>Desarrollador</td>
-      <td>
-        <div class="table-actions">
-          <a><slf-ui-icon category="layout" name="layout-alt-03" [weight]="1.5"/></a>
-          <a><slf-ui-icon category="general" name="edit-05" [weight]="1.5"/></a>
-          <a><slf-ui-icon category="general" name="trash-01" [weight]="1.5"/></a>
-        </div>
-      </td>
+    <!-- If users array is empty, you might want to show a message -->
+    <tr *ngIf="!users || users.length === 0">
+      <td colspan="6" style="text-align: center;">No hay usuarios para mostrar.</td>
     </tr>
-    <tr>
-      <td>
-        <div class="table-avatar">
-          <slf-ui-avatar Text="NC" Size="xs" BackgroundColor="primary"></slf-ui-avatar>
-        </div>
-
-      </td>
-      <td>Juan Perez</td>
-      <td>juan.perezexample.com</td>
-      <td>123456789</td>
-      <td>Desarrollador</td>
-      <td>
-        <div class="table-actions">
-          <a><slf-ui-icon category="layout" name="layout-alt-03" [weight]="1.5"/></a>
-          <a><slf-ui-icon category="general" name="edit-05" [weight]="1.5"/></a>
-          <a><slf-ui-icon category="general" name="trash-01" [weight]="1.5"/></a>
-        </div>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <div class="table-avatar">
-          <slf-ui-avatar Text="NC" Size="xs" BackgroundColor="primary"></slf-ui-avatar>
-        </div>
-
-      </td>
-      <td>Juan Perez</td>
-      <td>juan.perezexample.com</td>
-      <td>123456789</td>
-      <td>Desarrollador</td>
-      <td>
-        <div class="table-actions">
-          <a><slf-ui-icon category="layout" name="layout-alt-03" [weight]="1.5"/></a>
-          <a><slf-ui-icon category="general" name="edit-05" [weight]="1.5"/></a>
-          <a><slf-ui-icon category="general" name="trash-01" [weight]="1.5"/></a>
-        </div>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <div class="table-avatar">
-          <slf-ui-avatar Text="NC" Size="xs" BackgroundColor="primary"></slf-ui-avatar>
-        </div>
-
-      </td>
-      <td>Juan Perez</td>
-      <td>juan.perezexample.com</td>
-      <td>123456789</td>
-      <td>Desarrollador</td>
-      <td>
-        <div class="table-actions">
-          <a><slf-ui-icon category="layout" name="layout-alt-03" [weight]="1.5"/></a>
-          <a><slf-ui-icon category="general" name="edit-05" [weight]="1.5"/></a>
-          <a><slf-ui-icon category="general" name="trash-01" [weight]="1.5"/></a>
-        </div>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <div class="table-avatar">
-          <slf-ui-avatar Text="NC" Size="xs" BackgroundColor="primary"></slf-ui-avatar>
-        </div>
-
-      </td>
-      <td>Juan Perez</td>
-      <td>juan.perezexample.com</td>
-      <td>123456789</td>
-      <td>Desarrollador</td>
-      <td>
-        <div class="table-actions">
-          <a><slf-ui-icon category="layout" name="layout-alt-03" [weight]="1.5"/></a>
-          <a><slf-ui-icon category="general" name="edit-05" [weight]="1.5"/></a>
-          <a><slf-ui-icon category="general" name="trash-01" [weight]="1.5"/></a>
-        </div>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <div class="table-avatar">
-          <slf-ui-avatar Text="NC" Size="xs" BackgroundColor="primary"></slf-ui-avatar>
-        </div>
-
-      </td>
-      <td>Juan Perez</td>
-      <td>juan.perezexample.com</td>
-      <td>123456789</td>
-      <td>Desarrollador</td>
-      <td>
-        <div class="table-actions">
-          <a><slf-ui-icon category="layout" name="layout-alt-03" [weight]="1.5"/></a>
-          <a><slf-ui-icon category="general" name="edit-05" [weight]="1.5"/></a>
-          <a><slf-ui-icon category="general" name="trash-01" [weight]="1.5"/></a>
-        </div>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <div class="table-avatar">
-          <slf-ui-avatar Text="NC" Size="xs" BackgroundColor="primary"></slf-ui-avatar>
-        </div>
-
-      </td>
-      <td>Juan Perez</td>
-      <td>juan.perezexample.com</td>
-      <td>123456789</td>
-      <td>Desarrollador</td>
-      <td>
-        <div class="table-actions">
-          <a><slf-ui-icon category="layout" name="layout-alt-03" [weight]="1.5"/></a>
-          <a><slf-ui-icon category="general" name="edit-05" [weight]="1.5"/></a>
-          <a><slf-ui-icon category="general" name="trash-01" [weight]="1.5"/></a>
-        </div>
-      </td>
-    </tr>
-
   </tbody>
+
+  <tfoot *ngIf="totalPages > 0">
+    <tr>
+      <td colspan="6">
+        <div class="table-pagination">
+          <button (click)="previousPage()" [disabled]="currentPage === 1">
+            <slf-ui-icon category="arrows" name="arrow-left" [weight]="1.5"></slf-ui-icon>
+            Anterior
+          </button>
+          <div class="pagination-numbers">
+            <ng-container *ngFor="let page of displayedPageNumbers">
+              <span *ngIf="page === '...'" class="ellipsis">...</span>
+              <span *ngIf="page !== '...'"
+                    (click)="goToPage(page)"
+                    [class.selected]="page === currentPage"
+                    class="page-number">
+                {{ page }}
+              </span>
+            </ng-container>
+          </div>
+          <button (click)="nextPage()" [disabled]="currentPage === totalPages">
+            Siguiente
+            <slf-ui-icon category="arrows" name="arrow-right" [weight]="1.5"></slf-ui-icon>
+          </button>
+        </div>
+      </td>
+    </tr>
+  </tfoot>
 </table>

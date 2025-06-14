@@ -38,4 +38,65 @@ table {
       }
     }
   }
+
+  tfoot {
+    tr {
+      td {
+        .table-pagination {
+          margin-top: 50px;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          font-size: 14px;
+          font-weight: 600;
+          color: #414651;
+
+          .pagination-numbers {
+            display: flex;
+            align-items: center;
+            gap: 2px;
+            font-weight: 500;
+            color: #717680;
+
+            span {
+              display: block;
+              width: 40px;
+              height: 40px;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              cursor: pointer;
+              transition: background-color 0.3s ease, color 0.3s ease;
+              border-radius: 9999px;
+
+              &:hover {
+                background-color: var(--primary-color-50);
+                color: var(--primary-color-200);
+                border-radius: 9999px;
+              }
+
+              &.selected {
+                background-color: var(--primary-color-50);
+                color: var(--primary-color-200);
+                border-radius: 9999px;
+              }
+            }
+          }
+
+          button {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            border-radius: 8px;
+            border: 1px solid #D5D7DA;
+            padding: 8px 14px;
+            box-shadow: 0px 1px 2px 0px rgba(10, 13, 18, 0.05);
+            cursor: pointer;
+            min-width: 125px;
+          }
+        }
+      }
+    }
+  }
 }
